@@ -27,9 +27,9 @@ for row in range(return_max(position_list,1) + return_max(size_list,1) + 1):
     field.append([])
     for column in range(return_max(position_list,0) + return_max(size_list,0) + 1):
         field[row].append(0)    
+
 overlap = 0
-for position in position_list:
-    for size in size_list:
+for position,size in zip(position_list,size_list):
         for x in range(1,size[0]+1):
             for y in range(1,size[1]+1):
                 if field[position[1]+y][position[0]+x] == 0:
@@ -40,8 +40,7 @@ for position in position_list:
                 elif field[position[1]+y][position[0]+x] == 2:
                     pass
                 else:
-                    exit('error')
+                    exit('Error')
+
 print(f'Overlap Position = {overlap}')
 print(f'Runtime: {time.time()-start_time}')
-
-
