@@ -1,5 +1,4 @@
-
-input = open('input_2.txt').read().splitlines()
+import Stopwatch
 
 def twice_trice(obj):
     twice = False
@@ -20,9 +19,10 @@ def histogram(text):
             result[i] = 1
     return result
 
+Stopwatch.start()
 twice = 0
 trice = 0
-
+input = open('input_2.txt').read().splitlines()
 for line in input:
     result = twice_trice(histogram(line))
     if result[0] == True:
@@ -51,11 +51,10 @@ for text1 in correct:
             if error > 1:
                 break
         else:
+            print('Answer: ',end='')
             for index,char in enumerate(text1):
                 if text2[index] == char:
                     print(char,end='')    
             print('')      
-            
-
-
+Stopwatch.stop()
 
