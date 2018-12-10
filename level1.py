@@ -1,5 +1,5 @@
 
-input = open('pep.txt').read().splitlines()
+input = open('input_1.txt').read().splitlines()
 result = 0
 result_list = []
 while True:
